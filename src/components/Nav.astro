@@ -1,0 +1,45 @@
+---
+import logo from '../artwork/logo_r_1.svg';
+import logo_dark from '../artwork/logo_r_1_dark.svg';
+---
+
+<div class="w-full bg-secondary/90 z-10 sticky top-0">
+  <nav class="flex flex-wrap flex-row gap-2 px-3 py-3 md:py-0 mx-auto items-center md:h-16 justify-between">
+    <a href="/" title="Home Button" class="inline-block h-[2.667em] md:basis-auto">
+      <img class="h-full w-auto hover:opacity-80 inline-block dark:hidden" src={logo} /></object>
+      <img class="h-full w-auto hover:opacity-80 hidden dark:inline-block" src={logo_dark} /></object>
+    </a>
+    <div class="flex-1 basis-1/5"></div> 
+    <div class="flex flex-row flex-wrap flex-auto md:flex-initial justify-end gap-2 items-center w-max md:w-max h-full text-base md:text-[1.1487em]">
+      <slot />
+    </div>
+  </nav>
+  <div class="expand border-b border-solid border-medium w-full"></div> <!-- Bottom Border -->
+</div>
+
+<style>
+  @keyframes expandBorder {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+  }
+
+  .expand {
+    animation: 1s ease-out 0s 1 expandBorder;
+  }
+
+  .slide {
+    animation: 0.25s ease-out 0s 1 slideInFromTop;
+  }
+
+  /* Match style with bb.rad.cm */
+  @tailwind components;
+  @layer components {
+    .btn {
+      @apply px-2 py-1 md:px-2 md:py-[0.3em];
+    }
+  }
+</style>

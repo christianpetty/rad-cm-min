@@ -1,0 +1,13 @@
+# Build
+
+[build]
+  base = "/"
+  publish = "dist"
+  command = "npm run build"
+
+# Headers
+
+[[headers]]
+  for = "/fonts/*"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000"

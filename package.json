@@ -1,0 +1,21 @@
+{
+	"name": "astro",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/netlify": "^2.2.2",
+		"@astrojs/tailwind": "^3.1.2",
+		"@netlify/functions": "^1.6.0",
+		"astro": "^2.4.5",
+		"mathjs": "^11.8.0",
+		"netlify": "^13.1.7",
+		"tailwindcss": "^3.3.2"
+	}
+}

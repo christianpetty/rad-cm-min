@@ -1,0 +1,42 @@
+---
+import Head from "@components/Head.astro";
+import Nav from "@components/Nav.astro";
+import Footer from "@components/Footer.astro";
+
+import '@style/palette.css';
+import '@style/style.css';
+
+export interface Props {
+	title: string;
+  metaDescription: string;
+  pageWidth?: string;
+  pageHeight?: string;
+}
+
+const { title, metaDescription, pageWidth = "max-w-3xl", pageHeight = "min-h-screen" } = Astro.props;
+
+// URL for QR Code
+const url: string = Astro.url.toString();
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<Head title={title} metaDescription={metaDescription} />
+<body class="bg-secondary min-h-screen text-primary font-din overflow-y-scroll bg-scroll text-[16px]
+              motion-safe:!animate-none" ontouchstart="" onmouseover="">
+  <div class:list={[pageHeight, "w-full h-full flex flex-col items-center justify-start"]}>
+    
+    <Nav>
+      <slot name="nav" />
+    </Nav>
+
+    <!-- Main Content -->
+    <div class:list={[pageWidth, "transition-all flex-initial px-2 md:px-4 pt-2 md:pt-8 md:my-auto w-full"]}>
+      <slot />
+    </div>
+
+    <Footer />
+
+  </div>
+</body>
+</html>
